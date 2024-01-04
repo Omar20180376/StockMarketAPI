@@ -1,0 +1,146 @@
+{
+	"info": {
+		"_postman_id": "35598d2c-546c-4dac-ac2c-5a5a24f3c9e8",
+		"name": "stockMarketAPI",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "31348946"
+	},
+	"item": [
+		{
+			"name": "ListTickers",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "limit",
+						"value": "1",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8000/api/tickers",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"tickers"
+					],
+					"query": [
+						{
+							"key": "limit",
+							"value": "1",
+							"disabled": true
+						},
+						{
+							"key": "offset",
+							"value": "0",
+							"disabled": true
+						},
+						{
+							"key": "search",
+							"value": "Apple",
+							"disabled": true
+						},
+						{
+							"key": "symbol",
+							"value": "AAPL",
+							"disabled": true
+						},
+						{
+							"key": "endpoint",
+							"value": "eod",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "EndOfDayAndIntrADay",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8000/api/eod-intraday?symbols=AAPL&endpoint=intraday",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"eod-intraday"
+					],
+					"query": [
+						{
+							"key": "symbols",
+							"value": "AAPL"
+						},
+						{
+							"key": "limit",
+							"value": "1",
+							"disabled": true
+						},
+						{
+							"key": "offset",
+							"value": "1",
+							"disabled": true
+						},
+						{
+							"key": "date_to",
+							"value": "2023-12-29T17:00:00+0000",
+							"disabled": true
+						},
+						{
+							"key": "date_from",
+							"value": "2023-12-29T17:00:00+0000",
+							"disabled": true
+						},
+						{
+							"key": "sort",
+							"value": "ASC",
+							"disabled": true
+						},
+						{
+							"key": "interval",
+							"value": "6hour",
+							"disabled": true
+						},
+						{
+							"key": "endpoint",
+							"value": "intraday"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
